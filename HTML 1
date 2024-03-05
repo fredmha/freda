@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOC Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #f8f8f8;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .login-form {
+            margin-top: 100px;
+        }
+        input[type="email"], input[type="password"] {
+            padding: 10px;
+            margin: 5px 0;
+            display: block;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .mvp-description {
+            text-align: center;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <form class="login-form">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button type="submit">Log In</button>
+    </form>
+</div>
+
+<div class="mvp-description">
+    <h1>WOC - Work On Command</h1>
+    <p>Revolutionizing contractor and business engagements with a transparent, metric-based compensation system. Tailor your metrics, understand your compensation, and navigate your professional growth with real-time performance scorecards.</p>
+</div>
+
+</body>
+</html>
