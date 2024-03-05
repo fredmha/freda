@@ -3,59 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOC Login Page</title>
+    <title>WOC Platform Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             height: 100vh;
-            margin: 0;
+            flex-direction: column;
         }
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #f8f8f8;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .login-form {
-            margin-top: 100px;
-        }
-        input[type="email"], input[type="password"] {
-            padding: 10px;
-            margin: 5px 0;
-            display: block;
-            width: 300px;
-        }
-        button {
+        .button {
             padding: 10px 20px;
+            margin: 10px;
             cursor: pointer;
         }
-        .mvp-description {
-            text-align: center;
-            margin: 20px auto;
+        .form-input {
+            margin-bottom: 15px;
+        }
+        .hide {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <form class="login-form">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <button type="submit">Log In</button>
-    </form>
-</div>
+    <!-- Login Form -->
+    <div id="loginForm" class="login-form">
+        <h2>Welcome to WOC Platform</h2>
+        <input type="email" id="email" placeholder="Email" class="form-input"/>
+        <input type="password" id="password" placeholder="Password" class="form-input"/>
+        <button onclick="showRoleSelection()">Log In</button>
+    </div>
 
-<div class="mvp-description">
-    <h1>WOC - Work On Command</h1>
-    <p>Revolutionizing contractor and business engagements with a transparent, metric-based compensation system. Tailor your metrics, understand your compensation, and navigate your professional growth with real-time performance scorecards.</p>
-</div>
+    <!-- Role Selection -->
+    <div id="roleSelection" class="role-selection hide">
+        <h2>Are you an outsourced worker or a business?</h2>
+        <button class="button" onclick="redirectTo('worker')">Outsourced Worker</button>
+        <button class="button" onclick="redirectTo('business')">Business</button>
+    </div>
+
+    <script>
+        function showRoleSelection() {
+            // Hide login form and show role selection
+            document.getElementById('loginForm').classList.add('hide');
+            document.getElementById('roleSelection').classList.remove('hide');
+        }
+
+        function redirectTo(type) {
+            // Placeholder URLs - replace with actual paths
+            var baseUrl = "http://example.com/";
+            if (type === 'worker') {
+                window.location.href = baseUrl + "outsourced-worker.html";
+            } else if (type === 'business') {
+                window.location.href = baseUrl + "business.html";
+            }
+        }
+    </script>
 
 </body>
 </html>
